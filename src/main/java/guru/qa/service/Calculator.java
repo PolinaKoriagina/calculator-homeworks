@@ -15,14 +15,14 @@ public class Calculator {
     }
 
     public String start() {
-        writer.handleString("Введите два числа: ");
+        writer.handleString(Text.ENTER_ARGS.getText());
         int first = reader.readFirstArg();
         int second = reader.readSecondArg();
-        writer.handleString("Введите оператор (+, *, -, ^, /): ");
+        writer.handleString(Text.ENTER_OPERATOR.getText());
         Operation po = reader.readMathOperator();
         int sum = po.getOperation().invoke(first, second);
 
-        writer.handleString("\nРезультат:\n");
+        writer.handleString(Text.RESULT_OUTPUT.getText());
         return first + " " + po.getSymbol() + " " + second + " = " + sum;
     }
 
